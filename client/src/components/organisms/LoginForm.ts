@@ -1,6 +1,6 @@
-import { FormField } from '../molecules/FormField';
-import { Button } from '../atoms/Button';
-import { Checkbox } from '../atoms/Checkbox';
+import { FormField } from '@/components/molecules/FormField';
+import { Button } from '@/components/atoms/Button';
+import { Checkbox } from '@/components/atoms/Checkbox';
 
 export function LoginForm(onSubmit: (data: any) => void): HTMLFormElement {
     const form = document.createElement('form');

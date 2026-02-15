@@ -1,6 +1,6 @@
 import './index.css';
 import Phaser from 'phaser';
-import { AuthPage } from './pages/AuthPage';
+import { AuthPage } from '@/pages/AuthPage';
 
 class MainScene extends Phaser.Scene {
     constructor() {

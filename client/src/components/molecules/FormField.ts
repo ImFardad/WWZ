@@ -1,5 +1,5 @@
-import { Label } from '../atoms/Label';
-import { Input, InputProps } from '../atoms/Input';
+import { Label } from '@/components/atoms/Label';
+import { Input, InputProps } from '@/components/atoms/Input';
 
 export interface FormFieldProps extends InputProps {
     label: string;

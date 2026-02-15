@@ -21,10 +21,18 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
         "types": [
-            "vite/client"
-        ]
+            "vite/client",
+            "node"
+        ],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        }
     },
     "include": [
-        "src"
+        "src",
+        "vite.config.ts"
     ]
 }

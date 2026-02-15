@@ -1,5 +1,5 @@
-import { FormField } from '../molecules/FormField';
-import { Button } from '../atoms/Button';
+import { FormField } from '@/components/molecules/FormField';
+import { Button } from '@/components/atoms/Button';
 
 export function SignupForm(onSubmit: (data: any) => void): HTMLFormElement {
     const form = document.createElement('form');

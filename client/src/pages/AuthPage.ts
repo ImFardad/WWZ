@@ -1,6 +1,7 @@
-import { LoginForm } from '../components/organisms/LoginForm';
-import { SignupForm } from '../components/organisms/SignupForm';
-import { authApi } from '../lib/api';
+import { LoginForm } from '@/components/organisms/LoginForm';
+import { SignupForm } from '@/components/organisms/SignupForm';
+import { authApi } from '@/lib/api';
+import { toast } from '@/lib/toast';
 
 export function AuthPage(onAuthenticated: (token: string) => void): HTMLDivElement {
     const container = document.createElement('div');
@@ -33,9 +34,10 @@ export function AuthPage(onAuthenticated: (token: string) => void): HTMLDivEleme
             const loginForm = LoginForm(async (data) => {
                 try {
                     const res = await authApi.login(data);
-                    onAuthenticated(res.access_token);
+                    toast.success(res.message || 'Welcome back, Commander!');
+                    setTimeout(() => onAuthenticated(res.access_token), 1000);
                 } catch (err: any) {
-                    alert(err.message);
+                    toast.error(err.message);
                 }
             });
             formContainer.appendChild(loginForm);
@@ -45,9 +47,10 @@ export function AuthPage(onAuthenticated: (token: string) => void): HTMLDivEleme
             const signupForm = SignupForm(async (data) => {
                 try {
                     const res = await authApi.signup(data);
-                    onAuthenticated(res.access_token);
+                    toast.success(res.message || 'Account created successfully!');
+                    setTimeout(() => onAuthenticated(res.access_token), 1500);
                 } catch (err: any) {
-                    alert(err.message);
+                    toast.error(err.message);
                 }
             });
             formContainer.appendChild(signupForm);

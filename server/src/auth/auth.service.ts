@@ -1,6 +1,6 @@
 import { Injectable, UnauthorizedException, BadRequestException, Logger } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { UsersService } from '../users/users.service';
+import { UsersService } from '@/users/users.service';
 import * as bcrypt from 'bcryptjs';
 
 @Injectable()
@@ -37,6 +37,7 @@ export class AuthService {
         const payload = { username: user.username, sub: user.id };
         return {
             access_token: this.jwtService.sign(payload),
+            message: 'User registered successfully',
         };
     }
 
@@ -59,6 +60,7 @@ export class AuthService {
         const payload = { username: user.username, sub: user.id };
         return {
             access_token: this.jwtService.sign(payload),
+            message: 'Logged in successfully',
         };
     }
 }

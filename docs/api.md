@@ -37,7 +37,8 @@ Authenticate an existing user.
 - **Success Response:** `200 OK`
 ```json
 {
-  "access_token": "eyJhbG..."
+  "access_token": "eyJhbG...",
+  "message": "Logged in successfully"
 }
 ```
 
