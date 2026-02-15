@@ -18,7 +18,8 @@ Create a new user account.
 - **Success Response:** `201 Created`
 ```json
 {
-  "access_token": "eyJhbG..."
+  "access_token": "eyJhbG...",
+  "message": "User registered successfully"
 }
 ```
 
